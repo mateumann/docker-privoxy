@@ -4,6 +4,7 @@ FROM alpine:3.9.4
 ARG BUILD_DATE
 ARG VCS_REF
 
+ENV PRIVOXY_INSTANCE 0
 
 LABEL maintainer="mateumann@gmail.com" \
     org.label-schema.name="privoxy" \
@@ -16,17 +17,14 @@ LABEL maintainer="mateumann@gmail.com" \
     org.label-schema.schema-version="1.0" \
     com.microscaling.license="MIT" 
 
-ARG PRIVOXY_INSTANCE
-ENV PRIVOXY_INSTANCE=$PRIVOXY_INSTANCE
+RUN apk update && \
+    apk add --no-cache privoxy
+
+USER privoxy
 
 COPY config.template /etc/privoxy/config.template
 COPY entrypoint.sh /
 
-RUN apk update && \
-    apk add --no-cache privoxy && \
-    chown privoxy:nogroup /etc/privoxy/config.template
-
-USER privoxy
 
 EXPOSE 8118
 
