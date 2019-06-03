@@ -15,7 +15,7 @@ LABEL maintainer="mateumann@gmail.com" \
     org.label-schema.vcs-ref=$VCS_REF \
     org.label-schema.version="0.1.0" \
     org.label-schema.schema-version="1.0" \
-    com.microscaling.license="MIT" 
+    com.microscaling.license="MIT"
 
 RUN apk update && \
     apk add --no-cache privoxy=3.0.26-r0
