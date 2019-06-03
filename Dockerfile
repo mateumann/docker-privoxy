@@ -18,7 +18,7 @@ LABEL maintainer="mateumann@gmail.com" \
     com.microscaling.license="MIT" 
 
 RUN apk update && \
-    apk add --no-cache privoxy
+    apk add --no-cache privoxy=3.0.26-r0
 
 USER privoxy
 
