@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.0-experimental
-FROM alpine:3.9.4
+FROM alpine:3.10.0
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -13,12 +13,12 @@ LABEL maintainer="mateumann@gmail.com" \
     org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.vcs-url="https://github.com/mateumann/docker-privoxy.git" \
     org.label-schema.vcs-ref=$VCS_REF \
-    org.label-schema.version="0.1.0" \
+    org.label-schema.version="0.2.0" \
     org.label-schema.schema-version="1.0" \
     com.microscaling.license="MIT"
 
 RUN apk update && \
-    apk add --no-cache privoxy=3.0.26-r0 && \
+    apk add --no-cache privoxy=3.0.28-r0 && \
     rm -rf /var/cache/apk/*
 
 USER privoxy
