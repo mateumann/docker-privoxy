@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.0-experimental
-FROM alpine:3.11.2
+FROM alpine:3.11.3
 
 ARG BUILD_DATE
 ARG VCS_REF
