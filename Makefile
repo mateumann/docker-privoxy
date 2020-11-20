@@ -34,7 +34,6 @@ docker_build:
 	docker tag $(DOCKER_IMAGE):$(GIT_COMMIT) $(DOCKER_IMAGE):$(DOCKER_TAG)
 
 docker_push:
-	docker tag $(DOCKER_IMAGE):$(GIT_COMMIT) $(DOCKER_IMAGE):$(PRIVOXY_VERSION)-r0
 	docker push $(DOCKER_IMAGE):$(DOCKER_TAG)
 	docker push $(DOCKER_IMAGE):$(PRIVOXY_VERSION)-r0
 
