@@ -351,8 +351,7 @@
 #    and can be freely mixed with, "+hide-referer".  ("referrer" is the
 #    correct English spelling, however the HTTP specification has a
 #    bug - it requires it to be spelt "referer").
-#+hide-referer{forge}
-
+#
 # +hide-user-agent{browser-type}
 #    Change the "User-Agent:" header so web servers can't tell your
 #    browser type.  (Breaks many web sites).  Specify the user-agent
@@ -361,8 +360,7 @@
 #    Or to identify yourself explicitly as a Privoxy user:
 #      +hide-user-agent{Privoxy/1.0}
 #    (Don't change the version number from 1.0 - after all, why tell them?)
-#+hide-user-agent{Mozilla/5.0}
-
+#
 # +limit-connect{portlist}
 #
 #    By default, i.e. if no limit-connect action applies, Privoxy
@@ -608,6 +606,12 @@ standard.Medium
 +set-image-blocker{blank} \
 }
 standard.Advanced
+
+#----------------------------------------------------------------------------
+# Forge REFERER and USER_AGENT HTTP headers for all requests
+#----------------------------------------------------------------------------
+{ +hide-referer{forge} +hide-user-agent{Mozilla/5.0} }
+/
 
 #############################################################################
 # These extensions belong to images:
@@ -1973,7 +1977,6 @@ config.privoxy.org/
 # Sticky Actions = -block
 # URL = http://www.flickr.com/
 .flickr.com/
-
 
 #----------------------------------------------------------------------------
 # Sections that modify the action settings based on tags.
