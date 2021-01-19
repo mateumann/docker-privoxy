@@ -351,7 +351,7 @@
 #    and can be freely mixed with, "+hide-referer".  ("referrer" is the
 #    correct English spelling, however the HTTP specification has a
 #    bug - it requires it to be spelt "referer").
-+hide-referer{forge}
+#+hide-referer{forge}
 
 # +hide-user-agent{browser-type}
 #    Change the "User-Agent:" header so web servers can't tell your
@@ -361,7 +361,7 @@
 #    Or to identify yourself explicitly as a Privoxy user:
 #      +hide-user-agent{Privoxy/1.0}
 #    (Don't change the version number from 1.0 - after all, why tell them?)
-+hide-user-agent{Mozilla/5.0}
+#+hide-user-agent{Mozilla/5.0}
 
 # +limit-connect{portlist}
 #
