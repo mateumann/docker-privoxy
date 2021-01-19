@@ -23,8 +23,8 @@ RUN apk update && \
 
 USER privoxy
 
-COPY config.template /etc/privoxy/config.template
-COPY default.action /etc/privoxy/default.action
+COPY --chown=privoxy:privoxy config.template /etc/privoxy/config.template
+COPY --chown=privoxy:privoxy default.action /etc/privoxy/default.action
 COPY entrypoint.sh /
 
 
