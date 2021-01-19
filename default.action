@@ -607,12 +607,6 @@ standard.Medium
 }
 standard.Advanced
 
-#----------------------------------------------------------------------------
-# Forge REFERER and USER_AGENT HTTP headers for all requests
-#----------------------------------------------------------------------------
-{ +hide-referer{forge} +hide-user-agent{Mozilla/5.0} }
-/
-
 #############################################################################
 # These extensions belong to images:
 #############################################################################
@@ -1977,6 +1971,14 @@ config.privoxy.org/
 # Sticky Actions = -block
 # URL = http://www.flickr.com/
 .flickr.com/
+
+
+#----------------------------------------------------------------------------
+# Forge REFERER and USER_AGENT HTTP headers for all requests
+#----------------------------------------------------------------------------
+{ +hide-referer{forge} +hide-user-agent{Mozilla/5.0} }
+/
+
 
 #----------------------------------------------------------------------------
 # Sections that modify the action settings based on tags.
