@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.0-experimental
-FROM alpine:3.12
+FROM alpine:3.13
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -18,12 +18,13 @@ LABEL maintainer="mateumann@gmail.com" \
     com.microscaling.license="MIT"
 
 RUN apk update && \
-    apk add --no-cache privoxy=3.0.28-r0 && \
+    apk add --no-cache privoxy=3.0.29-r0 && \
     rm -rf /var/cache/apk/*
 
 USER privoxy
 
 COPY config.template /etc/privoxy/config.template
+COPY default.action /etc/privoxy/default.action
 COPY entrypoint.sh /
 
 
