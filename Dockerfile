@@ -22,9 +22,7 @@ RUN apk update && \
     rm -rf /var/cache/apk/*
 
 USER privoxy
-
 COPY --chown=privoxy:privoxy config.template /etc/privoxy/config.template
-COPY --chown=privoxy:privoxy default.action /etc/privoxy/default.action
 COPY entrypoint.sh /
 
 
