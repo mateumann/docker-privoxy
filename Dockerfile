@@ -19,7 +19,8 @@ LABEL maintainer="mateumann@gmail.com" \
 
 RUN apk update && \
     apk add --no-cache privoxy=3.0.32-r0 && \
-    rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/* && \
+    rm -f /etc/privoxy/config.new
 
 USER privoxy
 COPY --chown=privoxy:privoxy config.template /etc/privoxy/config.template
