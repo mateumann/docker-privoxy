@@ -5,4 +5,6 @@ if [ -n ${PRIVOXY_INSTANCE} ] ; then
 else
   cp etc/privoxy/config.template /etc/privoxy/config
 fi
+cd /etc/privoxy
+for F in *.new ; do mv ${F} $( basename ${F} .new ) ; done
 exec privoxy --no-daemon /etc/privoxy/config
